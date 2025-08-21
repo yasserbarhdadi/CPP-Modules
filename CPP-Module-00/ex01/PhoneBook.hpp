@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.hpp                                           :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/20 13:36:41 by yabarhda          #+#    #+#             */
-/*   Updated: 2025/08/21 15:43:16 by yabarhda         ###   ########.fr       */
+/*   Created: 2025/08/20 15:11:14 by yabarhda          #+#    #+#             */
+/*   Updated: 2025/08/21 15:36:03 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_H
-# define MAIN_H
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
-# include <iostream>
-# include <string>
-# include <cstring>
-# include <iomanip>
-# include "Contact.hpp"
-# include "PhoneBook.hpp"
+# define MAX_CONTACTS 8
+
+class PhoneBook {
+	public:
+		Contact arr[MAX_CONTACTS];
+};
 
 #endif
