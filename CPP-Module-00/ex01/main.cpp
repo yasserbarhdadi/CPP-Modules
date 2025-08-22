@@ -6,13 +6,13 @@
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 13:36:38 by yabarhda          #+#    #+#             */
-/*   Updated: 2025/08/21 17:29:04 by yabarhda         ###   ########.fr       */
+/*   Updated: 2025/08/21 17:36:40 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.hpp"
 
-int print_objs(PhoneBook phonebook)
+int search_contact(PhoneBook phonebook)
 {
 	int				index;
 	std::string		tmp;
@@ -24,6 +24,7 @@ int print_objs(PhoneBook phonebook)
 	std::cout << std::right << std::setw(10) << "last name";
 	std::cout << "|";
 	std::cout << std::right << std::setw(10) << "nickname" << std::endl;
+
 	for (int i = 0; i < MAX_CONTACTS; i++)
 	{
 		if (!phonebook.arr[i].get_first_name().empty())
@@ -46,8 +47,10 @@ int print_objs(PhoneBook phonebook)
 			std::cout << std::right << std::setw(10) << tmp << std::endl;
 		}
 	}
+
 	std::cout << "Enter an index: ";
 	std::cin >> index;
+
 	if (std::cin.fail())
 	{
 		std::cout << "Invalid input" << std::endl;
@@ -74,12 +77,6 @@ int print_objs(PhoneBook phonebook)
 		std::cout << "darkest secret: " << phonebook.arr[index].get_dark_secret() << std::endl;
 	}
 	return (1);
-}
-
-void	endl_and_exit(void)
-{
-	std::cout << std::endl;
-	exit(1);
 }
 
 int	add_contact(PhoneBook& phonebook)
@@ -135,7 +132,7 @@ int main()
 		}
 		else if (!strcmp(input.c_str(), "SEARCH"))
 		{
-			if (!print_objs(phonebook))
+			if (!search_contact(phonebook))
 				return (1);
 		}
 		else if (!strcmp(input.c_str(), "EXIT"))
