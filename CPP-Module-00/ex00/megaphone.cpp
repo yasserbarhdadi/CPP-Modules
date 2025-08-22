@@ -6,7 +6,7 @@
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 13:06:38 by yabarhda          #+#    #+#             */
-/*   Updated: 2025/08/20 13:30:25 by yabarhda         ###   ########.fr       */
+/*   Updated: 2025/08/22 18:36:29 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ int main(int ac, char **av)
 		{
 			for (int j = 0; av[i][j]; j++)
 			{
-				if (isalpha(av[i][j]) && islower(av[i][j]))
+				if (isalpha(av[i][j]))
 					std::cout << (char)toupper(av[i][j]);
 				else
 					std::cout << av[i][j];
 			}
 		}
-		std::cout << "\n";
+		std::cout << std::endl;
 	}
 	return (0);
 }

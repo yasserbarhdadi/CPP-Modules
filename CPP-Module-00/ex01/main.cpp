@@ -6,7 +6,7 @@
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 13:36:38 by yabarhda          #+#    #+#             */
-/*   Updated: 2025/08/21 17:36:40 by yabarhda         ###   ########.fr       */
+/*   Updated: 2025/08/22 18:47:40 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int search_contact(PhoneBook phonebook)
 		std::cout << "Index out of range" << std::endl;
 		return (1);
 	}
-	else if (phonebook.arr[index].get_status() == true)
+	else if (phonebook.arr[index].get_status() == true && phonebook.arr[index].get_first_name().empty())
 	{
 		std::cout << "Empty contact" << std::endl;
 		return (1);

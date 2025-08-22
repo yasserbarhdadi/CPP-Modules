@@ -6,12 +6,11 @@
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 13:36:41 by yabarhda          #+#    #+#             */
-/*   Updated: 2025/08/21 15:43:16 by yabarhda         ###   ########.fr       */
+/*   Updated: 2025/08/22 18:36:21 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_H
-# define MAIN_H
+#pragma once
 
 # include <iostream>
 # include <string>
@@ -19,5 +18,3 @@
 # include <iomanip>
 # include "Contact.hpp"
 # include "PhoneBook.hpp"
-
-#endif

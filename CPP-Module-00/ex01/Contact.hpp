@@ -6,14 +6,13 @@
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 15:11:19 by yabarhda          #+#    #+#             */
-/*   Updated: 2025/08/21 17:19:19 by yabarhda         ###   ########.fr       */
+/*   Updated: 2025/08/22 18:36:23 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+#pragma once
 
-struct Contact {
+class Contact {
 	private:
 		bool		is_empty = true;
 		std::string first_name;
@@ -36,5 +35,3 @@ struct Contact {
 		void		set_phone_number(std::string phone_num);
 		void		set_dark_secret(std::string secret);
 };
-
-#endif
