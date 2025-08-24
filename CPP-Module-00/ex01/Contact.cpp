@@ -6,38 +6,38 @@
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 15:11:26 by yabarhda          #+#    #+#             */
-/*   Updated: 2025/08/21 17:20:22 by yabarhda         ###   ########.fr       */
+/*   Updated: 2025/08/23 09:56:00 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.hpp"
 
-bool Contact::get_status()
+bool Contact::get_status() const
 {
 	return (is_empty);
 }
 
-std::string Contact::get_first_name()
+std::string Contact::get_first_name() const
 {
 	return (first_name);
 }
 
-std::string Contact::get_last_name()
+std::string Contact::get_last_name() const
 {
 	return (last_name);	
 }
 
-std::string Contact::get_nickname()
+std::string Contact::get_nickname() const
 {
 	return (nickname);
 }
 
-std::string Contact::get_phone_number()
+std::string Contact::get_phone_number() const
 {
 	return (phone_number);
 }
 
-std::string Contact::get_dark_secret()
+std::string Contact::get_dark_secret() const
 {
 	return (dark_secret);
 }
