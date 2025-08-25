@@ -6,7 +6,7 @@
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 13:36:38 by yabarhda          #+#    #+#             */
-/*   Updated: 2025/08/22 18:47:40 by yabarhda         ###   ########.fr       */
+/*   Updated: 2025/08/25 14:47:58 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int search_contact(PhoneBook phonebook)
 {
 	int				index;
+	std::string		input;
 	std::string		tmp;
 
 	std::cout << std::right << std::setw(10) << "index";
@@ -49,8 +50,8 @@ int search_contact(PhoneBook phonebook)
 	}
 
 	std::cout << "Enter an index: ";
-	std::cin >> index;
-
+	std::getline(std::cin, input);
+	index = atoi(input.c_str());
 	if (std::cin.fail())
 	{
 		std::cout << "Invalid input" << std::endl;
@@ -85,22 +86,42 @@ int	add_contact(PhoneBook& phonebook)
 	{
 		if (phonebook.arr[i].get_status() == true)
 		{
-			std::string tmp;
-			std::cout << "first name: ";
-			std::cin >> tmp;
-			phonebook.arr[i].set_first_name(tmp);
-			std::cout << "last name: ";
-			std::cin >> tmp;
-			phonebook.arr[i].set_last_name(tmp);
-			std::cout << "nickname: ";
-			std::cin >> tmp;
-			phonebook.arr[i].set_nickname(tmp);
-			std::cout << "phone number: ";
-			std::cin >> tmp;
-			phonebook.arr[i].set_phone_number(tmp);
-			std::cout << "darkest secret: ";
-			std::cin >> tmp;
-			phonebook.arr[i].set_dark_secret(tmp);
+			std::string input;
+			do {
+				std::cout << "first name: ";
+				std::getline(std::cin, input);
+				if (std::cin.eof())
+					return (0);
+			} while ((int)input.front() == 0);
+			phonebook.arr[i].set_first_name(input);
+			do {
+				std::cout << "last name: ";
+				std::getline(std::cin, input);
+				if (std::cin.eof())
+					return (0);
+			} while ((int)input.front() == 0);
+			phonebook.arr[i].set_last_name(input);
+			do {
+				std::cout << "nickname: ";
+				std::getline(std::cin, input);
+				if (std::cin.eof())
+					return (0);
+			} while ((int)input.front() == 0);
+			phonebook.arr[i].set_nickname(input);
+			do {
+				std::cout << "phone number: ";
+				std::getline(std::cin, input);
+				if (std::cin.eof())
+					return (0);
+			} while ((int)input.front() == 0);
+			phonebook.arr[i].set_phone_number(input);
+			do {
+				std::cout << "darkest secret: ";
+				std::getline(std::cin, input);
+				if (std::cin.eof())
+					return (0);
+			} while ((int)input.front() == 0);
+			phonebook.arr[i].set_dark_secret(input);
 			phonebook.arr[i].set_status(false);
 			break;
 		}
@@ -123,8 +144,7 @@ int main()
 	while (!(std::cin.eof()))
 	{
 		std::cout << "> " << std::flush;
-		std::cin.clear();
-		std::cin >> input;
+		std::getline(std::cin, input);
 		if (!strcmp(input.c_str(), "ADD"))
 		{
 			if (!add_contact(phonebook))
