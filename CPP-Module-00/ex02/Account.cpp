@@ -6,7 +6,7 @@
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 17:44:57 by yabarhda          #+#    #+#             */
-/*   Updated: 2025/08/22 18:36:22 by yabarhda         ###   ########.fr       */
+/*   Updated: 2025/08/25 21:19:37 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 #include <iostream>
 #include <ctime>
 
-int Account::_nbAccounts;
-int Account::_totalAmount;
-int Account::_totalNbDeposits;
-int Account::_totalNbWithdrawals;
-static int index;
+int Account::_nbAccounts = 0;
+int Account::_totalAmount = 0;
+int Account::_totalNbDeposits = 0;
+int Account::_totalNbWithdrawals = 0;
 
 int Account::getNbAccounts()
 {
@@ -97,7 +96,7 @@ void Account::displayAccountsInfos()
 
 Account::Account(int initial_deposit)
 {
-	_accountIndex = index++;
+	_accountIndex = _nbAccounts;
 	_nbAccounts++;
 	_amount = initial_deposit;
 	_totalAmount += _amount;
