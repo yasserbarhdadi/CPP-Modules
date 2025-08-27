@@ -6,7 +6,7 @@
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 10:36:51 by yabarhda          #+#    #+#             */
-/*   Updated: 2025/08/26 11:05:54 by yabarhda         ###   ########.fr       */
+/*   Updated: 2025/08/27 10:15:40 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,4 @@ std::string Zombie::get_name(void)
 	return (name);
 }
 
-Zombie::~Zombie()
-{
-	std::cout << get_name() + ": Deleted" << std::endl;
-}
+
