@@ -1,8 +1,8 @@
-NAME = account
+NAME = human
 CC = c++
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = Account.cpp tests.cpp
+SRC = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 OBJ = $(SRC:%.cpp=%.o)
 
 all: $(NAME)

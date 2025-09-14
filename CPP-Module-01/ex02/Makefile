@@ -1,8 +1,8 @@
-NAME = account
+NAME = zombie
 CC = c++
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = Account.cpp tests.cpp
+SRC = main.cpp
 OBJ = $(SRC:%.cpp=%.o)
 
 all: $(NAME)
