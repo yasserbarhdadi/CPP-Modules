@@ -1,5 +1,5 @@
 NAME = harlFilter
-CC = g++
+CC = c++
 CFLAGS = -Wall -Wextra -Werror
 
 SRC = main.cpp Harl.cpp
