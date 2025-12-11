@@ -6,7 +6,7 @@
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 09:41:45 by yabarhda          #+#    #+#             */
-/*   Updated: 2025/12/11 09:50:20 by yabarhda         ###   ########.fr       */
+/*   Updated: 2025/12/11 09:56:55 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ std::string PhoneBook::get_contact_value(const std::string &prompt)
 	return (input);
 }
 
-void PhoneBook::add_contact()
+void PhoneBook::add_contact(void)
 {
 	for (int i = 0; i < MAX_CONTACTS; i++)
 	{
@@ -58,7 +58,7 @@ void PhoneBook::add_contact()
 	}
 }
 
-void PhoneBook::search_contact()
+void PhoneBook::search_contact(void)
 {
 	int				index;
 	std::string		input;
