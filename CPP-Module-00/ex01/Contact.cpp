@@ -17,6 +17,11 @@ bool Contact::get_status() const
 	return (is_empty);
 }
 
+Contact::Contact()
+{
+	this->is_empty = true;
+}
+
 std::string Contact::get_first_name() const
 {
 	return (first_name);

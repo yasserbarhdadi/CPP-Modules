@@ -14,13 +14,14 @@
 
 class Contact {
 	private:
-		bool		is_empty = true;
+		bool		is_empty;
 		std::string first_name;
 		std::string last_name;
 		std::string nickname;
 		std::string phone_number;
 		std::string dark_secret;
 	public:
+		Contact();
 		bool		get_status() const;
 		std::string get_first_name() const;
 		std::string get_last_name() const;

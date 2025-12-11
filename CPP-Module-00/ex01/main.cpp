@@ -6,7 +6,7 @@
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 13:36:38 by yabarhda          #+#    #+#             */
-/*   Updated: 2025/11/02 10:28:46 by yabarhda         ###   ########.fr       */
+/*   Updated: 2025/12/11 09:21:14 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,8 @@ void search_contact(PhoneBook phonebook)
 	std::getline(std::cin, input);
 	if (std::cin.fail())
 		throw(1);
-	index = atoi(input.c_str());
-	if (input[0] < '0' || input[0] > '8')
+	index = input[0] - '0';
+	if (input[0] < '0' || input[0] > '8' || input[1]) 
 		std::cout << "Invalid index" << std::endl;
 	else if (index < 0 || index >= MAX_CONTACTS)
 		std::cout << "Index out of range" << std::endl;
@@ -82,7 +82,7 @@ std::string get_contact_value(const std::string &prompt)
 		std::getline(std::cin, input);
 		if (std::cin.eof())
 			throw(1);
-	} while ((int)input.front() == 0);
+	} while (input.empty());
 	return (input);
 }
 
