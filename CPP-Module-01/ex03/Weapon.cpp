@@ -5,14 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/27 11:25:26 by yabarhda          #+#    #+#             */
-/*   Updated: 2025/09/14 17:01:22 by yabarhda         ###   ########.fr       */
+/*   Created: 2025/12/18 17:02:17 by yabarhda          #+#    #+#             */
+/*   Updated: 2025/12/18 17:34:50 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
-const std::string& Weapon::getType() const
+Weapon::Weapon() {}
+
+Weapon::Weapon(std::string type)
+{
+	this->type = type;	
+}
+
+const std::string& Weapon::getType()
 {
 	return (type);
 }

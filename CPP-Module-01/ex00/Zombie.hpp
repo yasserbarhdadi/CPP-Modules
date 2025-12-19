@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/26 10:36:57 by yabarhda          #+#    #+#             */
-/*   Updated: 2025/08/27 11:26:57 by yabarhda         ###   ########.fr       */
+/*   Created: 2025/12/18 11:45:46 by yabarhda          #+#    #+#             */
+/*   Updated: 2025/12/18 12:10:41 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-
 #include <string>
 #include <iostream>
 
@@ -19,10 +18,9 @@ class Zombie {
 	private:
 		std::string name;
 	public:
-		void announce(void);
-		void set_name(std::string name);
-		std::string get_name(void) const;
+		Zombie(std::string name);
 		~Zombie();
+		void announce(void);
 };
 
 Zombie* newZombie(std::string name);
