@@ -5,15 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/25 05:37:19 by yabarhda          #+#    #+#             */
-/*   Updated: 2025/12/30 17:47:19 by yabarhda         ###   ########.fr       */
+/*   Created: 2026/01/04 09:50:44 by yabarhda          #+#    #+#             */
+/*   Updated: 2026/01/04 10:14:19 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-int main( void )
-{
+int main( void ) {
 	Fixed a;
 	Fixed const b( 10 );
 	Fixed const c( 42.42f );

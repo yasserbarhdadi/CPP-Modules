@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/25 05:37:16 by yabarhda          #+#    #+#             */
-/*   Updated: 2025/12/30 18:47:41 by yabarhda         ###   ########.fr       */
+/*   Created: 2026/01/04 09:50:41 by yabarhda          #+#    #+#             */
+/*   Updated: 2026/01/04 10:21:23 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@ class Fixed {
 		static const int bits = 8;
 	public:
 		Fixed();
-		Fixed(const int value);
-		Fixed(const float value);
-		Fixed(const Fixed& copy);
-		Fixed& operator=(const Fixed& other);
 		~Fixed();
-		int getRawBits( void ) const;
-		void setRawBits( int const raw );
-		float toFloat( void ) const;
-		int toInt( void ) const;
+		Fixed(const Fixed &other);
+		Fixed &operator=(const Fixed &other);
+		Fixed(const int i);
+		Fixed(const float f);
+		int getRawBits(void) const;
+		void setRawBits(int const raw);
+		float toFloat(void) const;
+		int toInt(void) const;
 };
 
-std::ostream& operator<<(std::ostream& stream, const Fixed& fixed);
+std::ostream &operator<<(std::ostream &out, const Fixed &other);

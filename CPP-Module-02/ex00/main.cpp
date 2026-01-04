@@ -5,17 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/25 05:37:07 by yabarhda          #+#    #+#             */
-/*   Updated: 2025/12/25 05:59:11 by yabarhda         ###   ########.fr       */
+/*   Created: 2026/01/04 09:11:19 by yabarhda          #+#    #+#             */
+/*   Updated: 2026/01/04 09:21:06 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-int main( void )
+int main(void)
 {
 	Fixed a;
-	Fixed b( a );
+	Fixed b(a);
 	Fixed c;
 	c = b;
 	std::cout << a.getRawBits() << std::endl;

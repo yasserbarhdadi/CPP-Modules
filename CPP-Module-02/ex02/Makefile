@@ -9,8 +9,8 @@ $(NAME): $(OBJ)
 %.o: %.cpp Fixed.hpp
 	$(CC) $(CFLAGS) -c $< -o $@
 clean:
-	rm -f $(OBJ)
+	rm -rf $(OBJ)
 fclean: clean
-	rm -f $(NAME)
+	rm -rf $(NAME)
 re: fclean all
 .PHONY: all clean fclean re

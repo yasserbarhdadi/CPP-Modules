@@ -5,47 +5,48 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/25 05:36:59 by yabarhda          #+#    #+#             */
-/*   Updated: 2025/12/30 17:43:30 by yabarhda         ###   ########.fr       */
+/*   Created: 2026/01/04 09:11:14 by yabarhda          #+#    #+#             */
+/*   Updated: 2026/01/04 09:48:56 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-int Fixed::getRawBits( void ) const
-{
-	std::cout << "getRawBits member function called" << std::endl;
-	return fixed_point;
-}
-
-void Fixed::setRawBits( int const raw )
-{
-	fixed_point = raw;
-}
-
 Fixed::Fixed()
 {
-	fixed_point = 0;
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Default constructor called\n";
+	setRawBits(0);
 }
 
-Fixed::Fixed(const Fixed& other)
+Fixed::Fixed(const Fixed &other)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Copy constructor called\n";
 	setRawBits(other.getRawBits());
 }
 
-Fixed::~Fixed(){
-	std::cout << "Destructor called" << std::endl;
+Fixed &Fixed::operator=(const Fixed &other)
+{
+	std::cout << "Copy assignment operator called\n";
+	if (this == &other)
+	{
+		return *this;
+	}
+	setRawBits(other.getRawBits());
+	return *this;
 }
 
-Fixed& Fixed::operator=(const Fixed& copy)
+Fixed::~Fixed()
 {
-	std::cout << "Copy assignment operator called" << std::endl;
-    if (this == &copy)
-	{
-        return *this;
-	}
-	setRawBits(copy.getRawBits());
-	return *this;
+	std::cout << "Destructor called\n";
+}
+
+int Fixed::getRawBits(void) const
+{
+	std::cout << "getRawBits member function called\n";
+	return fixed_point;
+}
+
+void Fixed::setRawBits(int const raw)
+{
+	fixed_point = raw;	
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/25 05:37:03 by yabarhda          #+#    #+#             */
-/*   Updated: 2025/12/30 17:39:14 by yabarhda         ###   ########.fr       */
+/*   Created: 2026/01/04 09:11:17 by yabarhda          #+#    #+#             */
+/*   Updated: 2026/01/04 09:31:49 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ class Fixed {
 		static const int bits = 8;
 	public:
 		Fixed();
-		Fixed(const Fixed& copy);
-		Fixed& operator=(const Fixed& other);
 		~Fixed();
-		int getRawBits( void ) const;
-		void setRawBits( int const raw );
+		Fixed(const Fixed &other);
+		Fixed &operator=(const Fixed &other);
+		int getRawBits(void) const;
+		void setRawBits(int const raw);
 };
