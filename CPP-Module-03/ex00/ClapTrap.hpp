@@ -6,7 +6,7 @@
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 09:32:59 by yabarhda          #+#    #+#             */
-/*   Updated: 2026/01/05 09:48:13 by yabarhda         ###   ########.fr       */
+/*   Updated: 2026/01/05 10:47:28 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 class ClapTrap {
 	private:
 		std::string name;
-		unsigned int HP = 10;
-		unsigned int EP = 10;
-		unsigned int AD = 0;
+		unsigned int HP;
+		unsigned int EP;
+		unsigned int AD;
 	public:
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap& other);

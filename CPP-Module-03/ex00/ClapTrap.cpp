@@ -6,7 +6,7 @@
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 09:32:57 by yabarhda          #+#    #+#             */
-/*   Updated: 2026/01/05 10:07:27 by yabarhda         ###   ########.fr       */
+/*   Updated: 2026/01/05 10:53:22 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,30 @@
 
 ClapTrap::ClapTrap(std::string name)
 {
+	std::cout << "Constructor called\n";
 	this->name = name;
+	setHP(10);
+	setEP(10);
+	setAD(0);
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other)
 {
+	std::cout << "Copy constructor called\n";
 	name = other.name;
 	setHP(other.getHP());
 	setEP(other.getEP());
 	setAD(other.getAD());
 }
 
-ClapTrap::~ClapTrap() {}
+ClapTrap::~ClapTrap()
+{
+	std::cout << "Destructor called\n";
+}
 
 ClapTrap &ClapTrap::operator=(const ClapTrap& other)
 {
+	std::cout << "Copy assignement operator called\n";
 	if (this == &other)
 	{
 		return *this;
@@ -42,22 +51,30 @@ ClapTrap &ClapTrap::operator=(const ClapTrap& other)
 
 void ClapTrap::attack(const std::string& target)
 {
-	if (HP > 0 && EP > 0)
+	if (getHP() > 0 && getEP() > 0)
 	{
-		std::cout << "ClapTrap" + name + " attacks " + target + ", causing " << getAD() << " points of damage!\n";
+		std::cout << "ClapTrap " + name + " attacks " + target + ", causing " << getAD() << " points of damage!\n";
 		setEP(getEP() - 1);
 	}
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	
+	if (getHP() < amount)
+		setHP(0);
+	else
+		setHP(getHP() - amount);
+	std::cout << "ClapTrap " + name + " takes " << amount << " damage\n";
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	setHP(getHP() + amount);
-	setEP(getEP() - 1);
+	if (getEP() > 0 && getHP() != 0)
+	{
+		setHP(getHP() + amount);
+		setEP(getEP() - 1);
+		std::cout << "ClapTrap " + name + " repairs " << amount << ", new HP = " << getHP() << "\n";
+	}
 }
 
 void ClapTrap::setHP(unsigned int value)
