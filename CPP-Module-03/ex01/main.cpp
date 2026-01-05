@@ -6,7 +6,16 @@
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 09:33:18 by yabarhda          #+#    #+#             */
-/*   Updated: 2026/01/05 09:33:19 by yabarhda         ###   ########.fr       */
+/*   Updated: 2026/01/05 16:19:25 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ScavTrap.hpp"
+
+int main()
+{
+	ScavTrap a("3r9sus");
+	a.attack("bolbol");
+	a.guardGate();
+	return 0;
+}

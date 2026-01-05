@@ -6,7 +6,7 @@
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 09:32:57 by yabarhda          #+#    #+#             */
-/*   Updated: 2026/01/05 10:53:22 by yabarhda         ###   ########.fr       */
+/*   Updated: 2026/01/05 16:17:31 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,27 +53,27 @@ void ClapTrap::attack(const std::string& target)
 {
 	if (getHP() > 0 && getEP() > 0)
 	{
-		std::cout << "ClapTrap " + name + " attacks " + target + ", causing " << getAD() << " points of damage!\n";
 		setEP(getEP() - 1);
+		std::cout << "ClapTrap " + name + " attacks " + target + ", causing " << getAD() << " points of damage!\n";
 	}
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
+	std::cout << "ClapTrap " + name + " takes " << amount << " damage\n";
 	if (getHP() < amount)
 		setHP(0);
 	else
 		setHP(getHP() - amount);
-	std::cout << "ClapTrap " + name + " takes " << amount << " damage\n";
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
+	std::cout << "ClapTrap " + name + " repairs " << amount << ", new HP = " << getHP() << "\n";
 	if (getEP() > 0 && getHP() != 0)
 	{
 		setHP(getHP() + amount);
 		setEP(getEP() - 1);
-		std::cout << "ClapTrap " + name + " repairs " << amount << ", new HP = " << getHP() << "\n";
 	}
 }
 
