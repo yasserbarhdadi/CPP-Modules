@@ -6,12 +6,13 @@
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 17:12:52 by yabarhda          #+#    #+#             */
-/*   Updated: 2026/01/05 18:01:13 by yabarhda         ###   ########.fr       */
+/*   Updated: 2026/01/06 21:42:26 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Dog.hpp"
+#include "WrongCat.hpp"
 
 int main()
 {
@@ -23,6 +24,9 @@ int main()
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
 	meta->makeSound();
+	WrongAnimal* k = new WrongCat();
+	k->makeSound();
+	delete k;
 	delete i;
 	delete j;
 	delete meta;

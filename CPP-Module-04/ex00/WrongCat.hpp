@@ -6,15 +6,15 @@
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 17:42:46 by yabarhda          #+#    #+#             */
-/*   Updated: 2026/01/05 17:55:43 by yabarhda         ###   ########.fr       */
+/*   Updated: 2026/01/06 20:49:38 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-class WrongCat : public Animal
+class WrongCat : public WrongAnimal
 {
 	public:
 		WrongCat();

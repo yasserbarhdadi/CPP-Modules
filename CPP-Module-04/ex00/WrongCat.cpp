@@ -6,7 +6,7 @@
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 17:42:44 by yabarhda          #+#    #+#             */
-/*   Updated: 2026/01/05 17:58:15 by yabarhda         ###   ########.fr       */
+/*   Updated: 2026/01/06 20:49:47 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ WrongCat::~WrongCat()
 	std::cout << "WrongCat destructor called\n";
 }
 
-WrongCat::WrongCat(const WrongCat& other) : Animal(other)
+WrongCat::WrongCat(const WrongCat& other) : WrongAnimal(other)
 {
 	std::cout << "WrongCat copy constructor called\n";
 	setType(other.getType());
