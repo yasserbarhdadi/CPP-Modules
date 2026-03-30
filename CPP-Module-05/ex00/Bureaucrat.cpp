@@ -6,7 +6,7 @@
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 19:56:44 by yabarhda          #+#    #+#             */
-/*   Updated: 2026/03/02 23:13:19 by yabarhda         ###   ########.fr       */
+/*   Updated: 2026/03/26 14:13:22 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ Bureaucrat::Bureaucrat(const std::string &n, int g) : name(n), grade(g)
 	if (g > 150)
 		throw Bureaucrat::GradeTooLowException();
 }
+
+Bureaucrat::Bureaucrat() : name("Default"), grade(1) {}
 
 Bureaucrat::~Bureaucrat() {}
 
