@@ -6,7 +6,7 @@
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 19:56:44 by yabarhda          #+#    #+#             */
-/*   Updated: 2026/03/26 14:13:22 by yabarhda         ###   ########.fr       */
+/*   Updated: 2026/03/30 15:26:45 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,9 @@ Bureaucrat::Bureaucrat() : name("Default"), grade(1) {}
 
 Bureaucrat::~Bureaucrat() {}
 
-Bureaucrat::Bureaucrat(const Bureaucrat &other)
-{
-	grade = other.getGrade();
-}
-		
+Bureaucrat::Bureaucrat(const Bureaucrat &other) : name(other.getName()),
+		grade(other.getGrade()) {}
+
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 {
 	if (this == &other)
