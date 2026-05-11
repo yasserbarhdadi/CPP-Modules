@@ -6,7 +6,7 @@
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 19:56:44 by yabarhda          #+#    #+#             */
-/*   Updated: 2026/03/30 16:44:25 by yabarhda         ###   ########.fr       */
+/*   Updated: 2026/05/11 14:59:27 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Bureaucrat::~Bureaucrat() {}
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other) : name(other.getName()),
 		grade(other.getGrade()) {}
-		
+
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 {
 	if (this == &other)
@@ -78,13 +78,15 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& b)
 	return os;
 }
 
-void Bureaucrat::signForm(Form& form)
+void Bureaucrat::signForm(Form &f)
 {
-	try {
-		form.beSigned(*this);
-		std::cout << name << " signed " << form.getName() << std::endl;
+	try
+	{
+		f.beSigned(*this);
+		std::cout << name << " signed " << f.getName() << "\n";
 	}
-	catch (std::exception & e) {
-		std::cout << name << " couldn't sign " << form.getName() << " because " << e.what() << "." << std::endl;
+	catch (std::exception &e)
+	{
+		std::cout << name << " couldn't sign " << f.getName() << " because " << e.what() << "\n";
 	}
 }

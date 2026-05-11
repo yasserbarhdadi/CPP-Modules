@@ -6,7 +6,7 @@
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 19:56:49 by yabarhda          #+#    #+#             */
-/*   Updated: 2026/03/26 14:13:39 by yabarhda         ###   ########.fr       */
+/*   Updated: 2026/05/11 14:13:26 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 #include <string>
 #include <iostream>
+#include <exception>
 
 class Bureaucrat {
 	private:

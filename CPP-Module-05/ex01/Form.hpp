@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/30 15:00:41 by yabarhda          #+#    #+#             */
-/*   Updated: 2026/03/30 16:44:25 by yabarhda         ###   ########.fr       */
+/*   Created: 2026/04/06 13:54:55 by yabarhda          #+#    #+#             */
+/*   Updated: 2026/05/11 15:16:29 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 #include <string>
 #include <iostream>
+#include <exception>
 
 class Bureaucrat;
 
@@ -21,30 +22,32 @@ class Form {
 	private:
 		const std::string name;
 		bool isSigned;
-		const int signGrade;
-		const int execGrade;
+		const int gradeReqtoSign;
+		const int gradeReqtoExecute;
 	public:
 		Form();
-		Form(const std::string &name, int signGrade, int execGrade);
 		~Form();
-		Form(const Form& other);
-		Form &operator=(const Form &other);
+		Form(const std::string& name, const int& gradeReqtoSign, const int& gradeReqtoExecute);
+		Form(const Form &);
+		Form &operator=(const Form&);
+
+		class GradeTooHighException : public std::exception
+		{
+			public:
+				const char *what() const throw();
+		};
+		class GradeTooLowException : public std::exception
+		{
+			public:
+				const char *what() const throw();			
+		};
 
 		std::string getName() const;
-		bool		getIsSigned() const;
-		int			getSignGrade() const;
-		int			getExecGrade() const;
-
-		void beSigned(Bureaucrat const &bureaucrat);
-
-		class GradeTooHighException : public std::exception {
-			public:
-				char const *what() const throw();
-		};
-		class GradeTooLowException : public std::exception {
-			public:
-				char const *what() const throw();
-		};
+		bool getSign() const;
+		int getGradeReqtoSign() const;
+		int getGradeReqtoExecute() const;
+		
+		void beSigned(Bureaucrat &b);
 };
 
-std::ostream& operator<<(std::ostream& os, const Form& f);
+std::ostream &operator<<(std::ostream &o, const Form &f);
