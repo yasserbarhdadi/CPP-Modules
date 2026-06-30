@@ -6,7 +6,7 @@
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 19:56:47 by yabarhda          #+#    #+#             */
-/*   Updated: 2026/06/29 12:47:12 by yabarhda         ###   ########.fr       */
+/*   Updated: 2026/06/30 10:40:23 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ int main()
 	Bureaucrat joe("joe", 34);
 	Bureaucrat intern("intern", 150);
 
-	std::cout << "-- Shrubbery Test --\n";
-	ShrubberyCreationForm shrub("garden");
+	ShrubberyCreationForm shrub("Tree of Wisdom");
 	std::cout << shrub;
 	try { shrub.beSigned(joe); }
 	catch (std::exception &e) { std::cout << "sign error: " << e.what() << '\n'; }
@@ -33,9 +32,9 @@ int main()
 	catch (std::exception &e) { std::cout << "sign error: " << e.what() << '\n'; }
 	try { shrub.execute(daya); }
 	catch (std::exception &e) { std::cout << "exec error: " << e.what() << '\n'; }
+	daya.executeForm(shrub);
 
-	std::cout << "\n-- Robotomy Test --\n";
-	RobotomyRequestForm robo("Bender");
+	RobotomyRequestForm robo("Tesla");
 	std::cout << robo;
 	try { robo.execute(joe); }
 	catch (std::exception &e) { std::cout << "exec without sign: " << e.what() << '\n'; }
@@ -43,9 +42,9 @@ int main()
 	catch (std::exception &e) { std::cout << "sign error: " << e.what() << '\n'; }
 	try { robo.execute(joe); }
 	catch (std::exception &e) { std::cout << "exec error: " << e.what() << '\n'; }
+	daya.executeForm(robo);
 
-	std::cout << "\n-- Presidential Pardon Test --\n";
-	PresidentialPardonForm pardon("Marvin");
+	PresidentialPardonForm pardon("Trump");
 	std::cout << pardon;
 	try { pardon.beSigned(joe); }
 	catch (std::exception &e) { std::cout << "sign by joe failed: " << e.what() << '\n'; }
@@ -55,6 +54,7 @@ int main()
 	catch (std::exception &e) { std::cout << "exec by intern failed: " << e.what() << '\n'; }
 	try { pardon.execute(daya); }
 	catch (std::exception &e) { std::cout << "exec error: " << e.what() << '\n'; }
+	daya.executeForm(pardon);
 
 	return 0;
 }

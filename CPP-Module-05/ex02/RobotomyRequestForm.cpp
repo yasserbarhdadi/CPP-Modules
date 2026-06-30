@@ -6,7 +6,7 @@
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/29 10:48:19 by yabarhda          #+#    #+#             */
-/*   Updated: 2026/06/29 12:42:34 by yabarhda         ###   ########.fr       */
+/*   Updated: 2026/06/29 14:35:44 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 void RobotomyRequestForm::doAction() const
 {
+	srand(time(0));
 	std::cout << "** rrrrRRRRRRrrrrr... RRRRRRRR... rrrrr **\n";
 	if (!(rand() % 2)) {
 		std::cout << "Robotomy failed.\n";

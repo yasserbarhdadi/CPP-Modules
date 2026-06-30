@@ -6,7 +6,7 @@
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/29 14:30:10 by yabarhda          #+#    #+#             */
-/*   Updated: 2026/06/29 15:33:53 by yabarhda         ###   ########.fr       */
+/*   Updated: 2026/06/30 10:36:22 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,60 +32,38 @@ Intern &Intern::operator=(const Intern &)
 	return *this;
 }
 
-ShrubberyCreationForm *Intern::createShrubbery(std::string target)
+AForm *Intern::createShrubbery(std::string target)
 {
 	return new ShrubberyCreationForm(target);
 }
 
-RobotomyRequestForm *Intern::createRobotomy(std::string target)
+AForm *Intern::createRobotomy(std::string target)
 {
 	return new RobotomyRequestForm(target);
 }
 
-PresidentialPardonForm *Intern::createPardon(std::string target)
+AForm *Intern::createPardon(std::string target)
 {
 	return new PresidentialPardonForm(target);
 }
 
-AForm *makeForm(std::string formName, std::string target)
+AForm *Intern::makeForm(std::string formName, std::string target)
 {
 	const std::string forms[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
 
-	AForm (*formType[3])(std::string) = {
-		createShrubbery,
-		createRobotomy,
-		createPardon
+	AForm *(Intern::*formType[3])(std::string) = {
+		&Intern::createShrubbery,
+		&Intern::createRobotomy,
+		&Intern::createPardon
 	};
 	for (int i = 0; i < 3; i++)
 	{
 		if (formName == forms[i])
 		{
-			
+			std::cout << "Intern creates " << formName << "\n";
+			return (this->*formType[i])(target);
 		}
 	}
+	std::cout << "Intern cannot create " << formName << "\n";
+	return NULL;
 }
-
-/*
-
-"shrubbery creation" → ShrubberyCreationForm
-"robotomy request"   → RobotomyRequestForm
-"presidential pardon"→ PresidentialPardonForm
-*/
-
-// AForm *Intern::makeForm(std::string formName, std::string target);
-// {
-// 	const std::string forms[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
-// 	// void (AForm::*complaint[3])(void) = {
-// 	// 	&ShrubberyCreationForm::ShrubberyCreationForm,
-// 	// 	&RobotomyRequestForm::RobotomyRequestForm,
-// 	// 	&PresidentialPardonForm::PresidentialPardonForm
-// 	// };
-// 	for (int i = 0; i < 3; i++)
-// 	{
-// 		if (form == forms[i])
-// 		{
-// 			(this->*complaint[i])();
-// 			return;
-// 		}
-// 	}
-// }

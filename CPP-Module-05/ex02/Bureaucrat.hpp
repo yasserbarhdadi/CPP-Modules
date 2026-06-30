@@ -6,7 +6,7 @@
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 19:56:49 by yabarhda          #+#    #+#             */
-/*   Updated: 2026/06/29 12:30:09 by yabarhda         ###   ########.fr       */
+/*   Updated: 2026/06/30 10:36:22 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ class Bureaucrat {
 		void decrementGrade(void);
 
 		void signForm(AForm &f);
+		void executeForm(AForm const &form) const;
 };
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& b);

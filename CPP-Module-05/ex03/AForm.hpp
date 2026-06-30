@@ -26,7 +26,7 @@ class AForm {
 		const int gradeReqtoExecute;
 	public:
 		AForm();
-		~AForm();
+		virtual ~AForm();
 		AForm(const std::string& name, const int& gradeReqtoSign, const int& gradeReqtoExecute);
 		AForm(const AForm &);
 		AForm &operator=(const AForm&);
