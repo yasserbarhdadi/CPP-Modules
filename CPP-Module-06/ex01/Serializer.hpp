@@ -6,7 +6,7 @@
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 14:04:54 by yabarhda          #+#    #+#             */
-/*   Updated: 2026/07/29 15:42:11 by yabarhda         ###   ########.fr       */
+/*   Updated: 2026/08/09 14:17:07 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Serializer
 {
 	public:
 		static uintptr_t serialize(Data *ptr);
-		static Data* deserialie(uintptr_t raw);
+		static Data* deserialize(uintptr_t raw);
 	private:
 		Serializer();
 		~Serializer();

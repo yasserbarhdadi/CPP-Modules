@@ -6,7 +6,7 @@
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/29 14:04:33 by yabarhda          #+#    #+#             */
-/*   Updated: 2026/07/29 15:41:52 by yabarhda         ###   ########.fr       */
+/*   Updated: 2026/08/09 14:14:36 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main()
 	uintptr_t raw_ptr = Serializer::serialize(&dt);
 	std::cout << "Serialized int: " << raw_ptr << "\n";
 
-	Data* des_data = Serializer::deserialie(raw_ptr);
+	Data* des_data = Serializer::deserialize(raw_ptr);
 	std::cout << "Deserialized ADDR: " << des_data << "\n";
 	std::cout << "Deserialized NAME: " << des_data->name << std::endl;
 	return 0;

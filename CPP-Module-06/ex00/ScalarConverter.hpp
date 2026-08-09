@@ -6,7 +6,7 @@
 /*   By: yabarhda <yabarhda@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/27 11:05:38 by yabarhda          #+#    #+#             */
-/*   Updated: 2026/08/09 14:04:20 by yabarhda         ###   ########.fr       */
+/*   Updated: 2026/08/09 14:13:19 by yabarhda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 #include <string>
 #include <iomanip>
 #include <cerrno>
-#include <stdlib.h>
-#include <limits.h>
+#include <cstdlib>
+#include <climits>
 
 class ScalarConverter 
 {
